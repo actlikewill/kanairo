@@ -6,6 +6,7 @@ from .views import index, ProtectedView
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('checkserverstatus/', index, name='index'),
+    path('protected/', ProtectedView.as_view()),
     path('auth/', include('user.urls')),
-    path('protected/', ProtectedView.as_view())
+    path('advert/', include('advert.urls'))
 ]
