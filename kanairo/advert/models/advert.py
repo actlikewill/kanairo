@@ -1,5 +1,6 @@
 from django.db import models
 from django.conf import settings
+from .category import Category
 
 def upload_status_image(instance, filename):
     return "status/{user}/{filename}".format(user=instance.user, filename=filename)
@@ -10,4 +11,8 @@ class Advert(models.Model):
     description = models.TextField(null=True, blank=True)
     image = models.ImageField(null=True, blank=True, upload_to=upload_status_image)
     updated = models.DateTimeField(auto_now=True)
+    category = models.ForeignKey(Category, on_delete=models.CASCADE)
     timestamp = models.DateTimeField(auto_now_add=True)
+
+    def __str__(self):
+        return self.title

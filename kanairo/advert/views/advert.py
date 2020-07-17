@@ -1,8 +1,9 @@
 from rest_framework import generics, permissions
 from user.permissions import IsOwnerOrReadOnly
-from .serializers import AdvertSerializer
+from ..serializers.advert import AdvertSerializer
+
 from django.shortcuts import get_object_or_404
-from .models import Advert
+from ..models.advert import Advert
 
 
 class AdvertListCreateView(generics.ListCreateAPIView):
@@ -16,6 +17,5 @@ class AdvertListCreateView(generics.ListCreateAPIView):
 class AdvertRetrieveUpdateDestroyView(generics.RetrieveUpdateDestroyAPIView):
     permission_classes = [IsOwnerOrReadOnly]    
     serializer_class = AdvertSerializer
-    queryset = Advert.objects.all()   
+    queryset = Advert.objects.all()
     
-  
