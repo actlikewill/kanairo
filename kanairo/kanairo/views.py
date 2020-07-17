@@ -13,4 +13,5 @@ class ProtectedView(generics.GenericAPIView):
     permission_classes = [permissions.IsAuthenticated]
 
     def get(self, request, *args, **kwargs):
+        print(request.user)
         return Response({"hello": "there"})
