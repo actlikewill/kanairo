@@ -2,10 +2,15 @@ from rest_framework import serializers
 from ..models.advert import Advert
 from ..models.category import Category
 from user.serializers import UserPublicSerializer
+from taggit_serializer.serializers import (
+    TagListSerializerField,
+    TaggitSerializer
+)
 
-class AdvertSerializer(serializers.ModelSerializer):
+class AdvertSerializer(TaggitSerializer, serializers.ModelSerializer):
     user        = UserPublicSerializer(read_only=True)    
-    ad_category = serializers.SerializerMethodField(read_only=True)   
+    ad_category = serializers.SerializerMethodField(read_only=True) 
+    tags = TagListSerializerField()  
     class Meta:
         model = Advert
         fields = [
@@ -15,6 +20,7 @@ class AdvertSerializer(serializers.ModelSerializer):
             'category',
             'ad_category',
             'description',
+            'tags',
             'image',
             'timestamp',
         ]
