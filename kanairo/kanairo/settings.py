@@ -31,11 +31,7 @@ DEBUG = True
 
 ALLOWED_HOSTS = ['http://localhost:8000', 'localhost']
 
-CORS_ALLOWED_ORIGINS = [
-    'http://localhost:8000',
-    'localhost',
-    'https://kanairo-fe.herokuapp.com',
-]
+
 # Application definition
 
 AUTH_USER_MODEL = 'users.CustomUser'
@@ -109,7 +105,7 @@ WSGI_APPLICATION = 'kanairo.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'db1',
+        'NAME': 'dd',
         'USER': 'kanairo',
         'PASSWORD': 'kanairo',
         'HOST': 'localhost',
@@ -137,8 +133,8 @@ SIMPLE_JWT = {
 }   
 
 CORS_ALLOWED_ORIGINS = [
-     "http://127.0.0.1:3000",
-     "http://localhost:3000"
+    'https://kanairo-fe.herokuapp.com',
+    'http://localhost:3000',
 ]
 
 
