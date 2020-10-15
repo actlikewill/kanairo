@@ -1,7 +1,7 @@
 from rest_framework import serializers
 from ..models.advert import Advert
 from ..models.category import Category
-from user.serializers import UserPublicSerializer
+from users.serializers import UserPublicSerializer
 from taggit_serializer.serializers import (
     TagListSerializerField,
     TaggitSerializer
