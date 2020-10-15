@@ -24,26 +24,30 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # See https://docs.djangoproject.com/en/3.0/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'v10#khca$9lpd11!ytug*n1*b@u6objn#nuy82ix2+53(gdv21'
+SECRET_KEY = os.environ.get('DJANGO_SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
 ALLOWED_HOSTS = ['http://localhost:8000', 'localhost']
 
-
+CORS_ALLOWED_ORIGINS = [
+    'http://localhost:8000',
+    'localhost',
+    'https://kanairo-fe.herokuapp.com',
+]
 # Application definition
 
 AUTH_USER_MODEL = 'users.CustomUser'
 
 INSTALLED_APPS = [
-    # 'corsheaders',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'corsheaders',
     'rest_framework',
     'rest_framework.authtoken',
     'djoser',
