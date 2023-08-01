@@ -2,5 +2,5 @@ from django.apps import AppConfig
 
 
 class KanairoConfig(AppConfig):
-    default_auto_field = 'django.db.models.BigAutoField'
-    name = 'kanairo'
+    default_auto_field = "django.db.models.BigAutoField"
+    name = "kanairo"
