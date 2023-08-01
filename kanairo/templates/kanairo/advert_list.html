@@ -1,0 +1,8 @@
+<h1>Kanairo</h1>
+<div>
+  {% for ad in adverts %}
+    <a href="{% url 'advert_detail' ad.slug %}">
+      <h2>{{ ad.title }}</h2>
+    </a>
+  {% endfor %}
+</div>

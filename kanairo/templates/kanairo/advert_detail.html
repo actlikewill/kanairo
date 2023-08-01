@@ -1,0 +1,5 @@
+<div>
+  <h1>{{ advert.title }}</h1>
+  {% for img in advert.images.all %}<img src="{{ img.image.url }}" alt="{{ img.alt }}" />{% endfor %}
+  <p>{{ advert.description }}</p>
+</div>
