@@ -35,6 +35,7 @@ ALLOWED_HOSTS = ["http://localhost:8000", "localhost"]
 AUTH_USER_MODEL = "user.User"
 
 INSTALLED_APPS = [
+    "kanairo",
     "user",
     "django.contrib.admin",
     "django.contrib.auth",
